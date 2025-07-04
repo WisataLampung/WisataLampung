@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinasi - Jelajahi Lampung</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown .group:hover .dropdown-submenu {
+            display: block;
+        }
+        .transition-all-smooth {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header dan Navigasi -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 flex-shrink-0">
+                    <img id="header-logo" src="https://i.pinimg.com/736x/0b/38/46/0b384628dc5639a20ea1385b4f324e9a.jpg" alt="Logo Pariwisata Lampung" class="h-12 w-12 object-cover rounded-full">
+                    <span class="text-xl font-bold text-gray-800">Jelajahi Lampung</span>
+                </a>
+
+                <!-- Kontainer untuk Navigasi dan Pencarian di sisi kanan -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <!-- Navigasi Desktop -->
+                    <nav class="flex items-center space-x-8">
+                        <a href="index.html" class="text-gray-600 hover:text-teal-600">Beranda</a>
+                        <!-- Dropdown Destinasi -->
+                        <div class="relative dropdown">
+                            <a href="destinasi.html" class="text-teal-600 font-semibold flex items-center">
+                                Destinasi <i data-feather="chevron-down" class="w-4 h-4 ml-1"></i>
+                            </a>
+                            <div class="dropdown-menu absolute hidden bg-white shadow-lg rounded-lg mt-2 py-2 w-56">
+                                <!-- Sub-menu Bandar Lampung -->
+                                <div class="relative group">
+                                    <a href="#destinasi-bandar-lampung" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-teal-50">
+                                        Bandar Lampung
+                                        <i data-feather="chevron-right" class="w-4 h-4"></i>
+                                    </a>
+                                    <div class="dropdown-submenu absolute left-full top-0 hidden bg-white shadow-lg rounded-lg py-2 w-56">
+                                        <a href="#destinasi-buatan-bdl" class="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50">Destinasi Buatan</a>
+                                        <a href="#destinasi-alam-bdl" class="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50">Destinasi Alam</a>
+                                    </div>
+                                </div>
+                                <!-- Sub-menu Lampung Selatan -->
+                                <div class="relative group">
+                                    <a href="#destinasi-lampung-selatan" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-teal-50">
+                                        Lampung Selatan
+                                        <i data-feather="chevron-right" class="w-4 h-4"></i>
+                                    </a>
+                                    <div class="dropdown-submenu absolute left-full top-0 hidden bg-white shadow-lg rounded-lg py-2 w-56">
+                                        <a href="#destinasi-buatan-lamsel" class="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50">Destinasi Buatan</a>
+                                        <a href="#destinasi-alam-lamsel" class="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50">Destinasi Alam</a>
+                                    </div>
+                                </div>
+                                <!-- Sub-menu Pesawaran -->
+                                <div class="relative group">
+                                    <a href="#destinasi-pesawaran" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-teal-50">
+                                        Pesawaran
+                                        <i data-feather="chevron-right" class="w-4 h-4"></i>
+                                    </a>
+                                    <div class="dropdown-submenu absolute left-full top-0 hidden bg-white shadow-lg rounded-lg py-2 w-56">
+                                        <a href="#destinasi-buatan-pesawaran" class="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50">Destinasi Buatan</a>
+                                        <a href="#destinasi-alam-pesawaran" class="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50">Destinasi Alam</a>
+                                    </div>
+                                </div>
+                                <!-- Sub-menu Lampung Barat -->
+                                <div class="relative group">
+                                    <a href="#destinasi-lampung-barat" class="flex justify-between items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-teal-50">
+                                        Lampung Barat
+                                        <i data-feather="chevron-right" class="w-4 h-4"></i>
+                                    </a>
+                                    <div class="dropdown-submenu absolute left-full top-0 hidden bg-white shadow-lg rounded-lg py-2 w-56">
+                                        <a href="#destinasi-buatan-lambar" class="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50">Destinasi Buatan</a>
+                                        <a href="#destinasi-alam-lambar" class="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50">Destinasi Alam</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="akomodasi.html" class="text-gray-600 hover:text-teal-600">Akomodasi</a>
+                        <a href="profil.html" class="text-gray-600 hover:text-teal-600">Profil & Sejarah</a>
+                        <a href="peta.html" class="text-gray-600 hover:text-teal-600">Peta</a>
+                    </nav>
+
+                    <!-- Tombol Pesan -->
+                    <a href="pemesanan.html" class="bg-teal-600 text-white font-semibold px-5 py-2 rounded-full hover:bg-teal-700 transition-all-smooth shadow-sm">Pesan Tiket</a>
+                </div>
+
+                <!-- Tombol Menu Mobile -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-teal-600 focus:outline-none">
+                        <i data-feather="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigasi Mobile -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="index.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-teal-50 rounded">Beranda</a>
+                <h3 class="px-4 pt-4 pb-2 text-sm font-bold text-gray-500">Destinasi</h3>
+                <a href="destinasi.html" class="block py-2 px-4 text-sm text-teal-600 bg-teal-50 rounded">Semua Destinasi</a>
+                <a href="#destinasi-bandar-lampung" class="block py-2 px-4 text-sm text-gray-700 hover:bg-teal-50 rounded ml-4">Bandar Lampung</a>
+                 <a href="#destinasi-buatan-bdl" class="block py-2 px-4 text-sm text-gray-700 hover:bg-teal-50 rounded ml-8">Destinasi Buatan</a>
+                 <a href="#destinasi-alam-bdl" class="block py-2 px-4 text-sm text-gray-700 hover:bg-teal-50 rounded ml-8">Destinasi Alam</a>
+                <a href="#destinasi-lampung-selatan" class="block py-2 px-4 text-sm text-gray-700 hover:bg-teal-50 rounded ml-4">Lampung Selatan</a>
+                 <a href="#destinasi-buatan-lamsel" class="block py-2 px-4 text-sm text-gray-700 hover:bg-teal-50 rounded ml-8">Destinasi Buatan</a>
+                 <a href="#destinasi-alam-lamsel" class="block py-2 px-4 text-sm text-gray-700 hover:bg-teal-50 rounded ml-8">Destinasi Alam</a>
+                <a href="#destinasi-pesawaran" class="block py-2 px-4 text-sm text-gray-700 hover:bg-teal-50 rounded ml-4">Pesawaran</a>
+                 <a href="#destinasi-buatan-pesawaran" class="block py-2 px-4 text-sm text-gray-700 hover:bg-teal-50 rounded ml-8">Destinasi Buatan</a>
+                 <a href="#destinasi-alam-pesawaran" class="block py-2 px-4 text-sm text-gray-700 hover:bg-teal-50 rounded ml-8">Destinasi Alam</a>
+                <a href="#destinasi-lampung-barat" class="block py-2 px-4 text-sm text-gray-700 hover:bg-teal-50 rounded ml-4">Lampung Barat</a>
+                 <a href="#destinasi-buatan-lambar" class="block py-2 px-4 text-sm text-gray-700 hover:bg-teal-50 rounded ml-8">Destinasi Buatan</a>
+                 <a href="#destinasi-alam-lambar" class="block py-2 px-4 text-sm text-gray-700 hover:bg-teal-50 rounded ml-8">Destinasi Alam</a>
+                <h3 class="px-4 pt-4 pb-2 text-sm font-bold text-gray-500">Menu Lain</h3>
+                <a href="akomodasi.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-teal-50 rounded">Akomodasi</a>
+                <a href="profil.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-teal-50 rounded">Profil & Sejarah</a>
+                <a href="peta.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-teal-50 rounded">Peta</a>
+                <div class="mt-4 px-4">
+                     <a href="pemesanan.html" class="w-full text-center bg-teal-600 text-white font-semibold px-5 py-2 rounded-full hover:bg-teal-700 transition-all-smooth shadow-sm">Pesan Tiket</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Judul Halaman -->
+        <section class="bg-teal-600 text-white py-12">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl font-bold">Destinasi Wisata Lampung</h1>
+                <p class="mt-2 text-lg opacity-90">Jelajahi pesona alam dan buatan di setiap sudut Lampung.</p>
+            </div>
+        </section>
+
+        <!-- Konten Destinasi -->
+        <div class="container mx-auto px-6 py-20 space-y-16">
+            
+            <!-- Bandar Lampung -->
+            <section id="destinasi-bandar-lampung">
+                <h2 class="text-3xl font-bold mb-8 border-b-4 border-teal-500 pb-2">Kota Bandar Lampung</h2>
+                
+                <!-- Destinasi Buatan -->
+                <div id="destinasi-buatan-bdl">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-700">Destinasi Buatan</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Kartu Bukit Aslan -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all-smooth">
+                            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/06/de/7c/ocean-mountain-and-city.jpg?w=900&h=500&s=1" alt="Bukit Aslan" class="w-full h-56 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Bukit Aslan</h4>
+                                <p class="text-gray-600 mb-4 text-sm">Terletak di atas ketinggian, Bukit Aslan menawarkan panorama memukau kota Bandar Lampung dan laut lepas yang bisa dinikmati dari satu tempat. Diresmikan pada 5 Agustus 2022, destinasi ini menjadi pilihan favorit para pencari ketenangan sekaligus petualangan.</p>
+                                <a href="detail-bukit-aslan.html" class="font-semibold text-teal-600 hover:text-teal-800">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- Kartu Lembah Hijau -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all-smooth">
+                            <img src="https://zavalokatravel.com/wp-content/uploads/2022/09/fasilitas-di-lembah-hijau-lampung.jpg" alt="Lembah Hijau Lampung" class="w-full h-56 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Lembah Hijau Lampung</h4>
+                                <p class="text-gray-600 mb-4 text-sm">Lembah Hijau Lampung dibuka secara resmi pada 14 April 2007. Seperti namanya, tempat wisata ini dibangun di atas kawasan lembah seluas 30 Ha dan berlokasi di pusat ibukota Provinsi Lampung yakni Bandar Lampung, tepatnya di Jalan Raden Kesuma Ratu, Tanjung Karang Barat.</p>
+                                <a href="detail-lembah-hijau.html" class="font-semibold text-teal-600 hover:text-teal-800">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- Kartu Lampung Walk -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all-smooth">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhw0rMAix5052iz8srsSiy-nlb9iKIcjizYjKDe4GhzfC9BY9__QhM_6py8vTyHOxcZTd6ESco9_2qurUVrsWnO2z1VQO4IsGzzvXozjJHdJUFb27nEAaXG79U7-6E_dMsQnPY8vyI0oeyF/s2048/InShot_20201107_005342550.jpg" alt="Lampung Walk" class="w-full h-56 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Lampung Walk</h4>
+                                <p class="text-gray-600 mb-4 text-sm">Lampung Walk salah satu taman rekreasi di Lampung yang mempunyai daya tarik wahana waterpark. Pengunjung dapat mencoba seluncuran spiral dan panjang, ada juga kolam khusus untuk anak-anak. Selanjutnya di Lampung Walk juga mempunyai wahana Studio 3D, pengunjung dapat mengabadikan momen dengan berbagai macam spot menarik dan instagramable.</p>
+                                <a href="detail-lampung-walk.html" class="font-semibold text-teal-600 hover:text-teal-800">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- Kartu Bukit Sakura -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all-smooth">
+                            <img src="https://ik.imagekit.io/tvlk/blog/2024/07/Bukit-Sakura-Lampung_-Daya-Tarik-Harga-Tiket-Masuk-dan-Lokasinya.jpeg?tr=q-70,c-at_max,w-500,h-250,dpr-2" alt="Bukit Sakura" class="w-full h-56 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Bukit Sakura</h4>
+                                <p class="text-gray-600 mb-4 text-sm">Bukit Sakura merupakan taman wisata yang bernuansa jepang yang berada di Jl. Melati Raya, Langkapura, Kec. Langkapura, Kota Bandar Lampung, Prov. Lampung. Tempat wisata ini menyajikan berbagai keindahan dengan konsep ornamen ornamen ala Jepang yang menjadikan kita seakan berada di negeri sakura. Dari pertama pintu masuk kita disuguhkan dengan lampion lampion merah, lampu lampu gantung yang unik, dan tentunya bunga bunga sakura yang cantik.</p>
+                                <a href="detail-bukit-sakura.html" class="font-semibold text-teal-600 hover:text-teal-800">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Destinasi Alam -->
+                <div id="destinasi-alam-bdl" class="mt-12">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-700">Destinasi Alam</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Placeholder untuk destinasi alam -->
+                        <div class="bg-white rounded-xl shadow-lg p-6 text-center text-gray-400">
+                            <p>Segera Hadir</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lampung Selatan -->
+            <section id="destinasi-lampung-selatan" class="pt-8">
+                 <h2 class="text-3xl font-bold mb-8 border-b-4 border-teal-500 pb-2">Lampung Selatan</h2>
+                 
+                 <!-- Destinasi Buatan Lamsel -->
+                <div id="destinasi-buatan-lamsel">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-700">Destinasi Buatan</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Kartu Tabek Indah -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all-smooth">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT81yO3d6za0BRV2GD2SrMLXYgl-qYHa3M6IaqKF4R7W-e8wroRF6eC6OeshqvWWDzWZ6o&usqp=CAU" alt="Tabek Indah" class="w-full h-56 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Tabek Indah</h4>
+                                <p class="text-gray-600 mb-4 text-sm">Kampoeng Wisata Tabek Indah adalah kawasan wisata terpadu lengkap dengan fasilitas penginapannya yang bisa anda temukan di Desa Serbajadi, Kabupaten Lampung Selatan. Lingkungan di Tabek Indah sangat hijau. Dengan rumput yang dipangkas rapi menutupi permukaan tanah seperti sebuah karpet dan rimbunnya pepohonan yang memenuhi alam Tabek Indah. Karena permukaan rumput yang relatif rata, maka anda bersama teman-teman bisa bermain bola disini. Rerumputan di Tabek Indah dibelah oleh jalan setapak terbuat dari paving block yang sudah tersusun rapi.</p>
+                                <a href="detail-tabek-indah.html" class="font-semibold text-teal-600 hover:text-teal-800">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- Kartu Slanik Waterpark -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all-smooth">
+                            <img src="https://storage.googleapis.com/seo-cms/assets/Kolam_renang_untuk_anak_anak_di_Slanik_Waterpark_4086df9a66/Kolam_renang_untuk_anak_anak_di_Slanik_Waterpark_4086df9a66.jpg" alt="Slanik Waterpark" class="w-full h-56 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Slanik Waterpark</h4>
+                                <p class="text-gray-600 mb-4 text-sm">Slanik Waterpark merupakan taman air terbesar dan terluas di Provinsi Lampung yang memiliki beragam wahana seru. Objek wisata yang telah berdiri sejak tahun 2016 ini memiliki luas lahan seluas 1 hektare dan mengusung tema negeri dongeng. Di Slanik Waterpark terdapat berbagai macam jenis kolam dan berbagai fasilitas lainnya yang dihias dengan ornamen yang menarik perhatian mata, seperti patung naga, patung gurita, istana dan juga patung yang menyerupai Gunung Krakatau.</p>
+                                <a href="detail-slanik-waterpark.html" class="font-semibold text-teal-600 hover:text-teal-800">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- Kartu Krakatau Park -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all-smooth">
+                            <img src="https://rakyatempatlawang.bacakoran.co/upload/14a4ae3d72fc8873c8955b01fb2b3592.jpg" alt="Krakatau Park Lampung" class="w-full h-56 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Krakatau Park Lampung</h4>
+                                <p class="text-gray-600 mb-4 text-sm">Destinasi wisata yang satu ini pasti lagi jadi bahan perbincangan teman-teman yang berada di kota lampung pastinya. Kamu nggak perlu jauh-jauh nyobain wahana dari destinasi wisata keren seperti Jatim Park karena wahana baru ini merupakan proyek kerjasama ASDP dengan Jatim Park lho! Dijamin semua wahana yang tersedia keren abis!</p>
+                                <a href="detail-krakatau-park.html" class="font-semibold text-teal-600 hover:text-teal-800">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- Kartu Menara Siger -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all-smooth">
+                            <img src="https://paltv.disway.id/upload/138c4f7be6e416d48e9af0cf12c7dfe7.png" alt="Menara Siger" class="w-full h-56 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Menara Siger</h4>
+                                <p class="text-gray-600 mb-4 text-sm">Tak jauh dari Pelabuhan Bakauheni, berdiri megah sebuah bangunan yang menjadi kebanggaan masyarakat Lampung. Bangunan ini berdiri menjulang pada ketinggian 110 meter di atas permukaan laut dan terletak tepat menghadap gerbang masuk Pelabuhan Bakauheni. Inilah landmark Provinsi Lampung sekaligus titik kilometer nol selatan Sumatera.</p>
+                                <a href="detail-menara-siger.html" class="font-semibold text-teal-600 hover:text-teal-800">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                 <!-- Destinasi Alam Lamsel -->
+                <div id="destinasi-alam-lamsel" class="mt-12">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-700">Destinasi Alam</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                        
+                        <!-- Kartu Pantai Minang Rua -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all-smooth">
+                            <img src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/11/2024/02/02/pantai-minang-rua-2414059214.jpg" alt="Pantai Minang Rua" class="w-full h-56 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Pantai Minang Rua</h4>
+                                <p class="text-gray-600 mb-4 text-sm">Keindahan Pantai Minang Rua yang terletak di Desa Kelawi, Kecamatan Bakauheni, Kabupaten Lampung Selatan, seperti tak ada habisnya untuk diceritakan. Tiba di sana, pengunjung disambut dengan hamparan pantai berpasir putih yang berpadu dengan ombak. Keindahan itu seakan menggoda siapa saja untuk bersantai sambil menikmati matahari terbenam di pinggir pantai.</p>
+                                <a href="detail-minang-rua.html" class="font-semibold text-teal-600 hover:text-teal-800">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- Kartu Pantai Kedu Warna -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all-smooth">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwinhr0oXmljOQrqqfPgTLLaHusmpr-F06JbcRkLAazfBtHbBGBYle6BSougpR2yVACd6r-al7rd6Hh03XMOVhLEY_-9qAiKpP84Y-dBCyoy5Uf2H54-NfHMjYT9c0ZOVdPCGpCrscvaEtJzEeIOp3uYTJqLaz3ATT9sAQJ6NuVlKvnO3rOA8u-r0heqk/s640/pantai%20kedu%20warna.webp" alt="Pantai Kedu Warna" class="w-full h-56 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Pantai Kedu Warna</h4>
+                                <p class="text-gray-600 mb-4 text-sm">Pantai Kedu yang terletak di Kecamatan Kalianda, Kabupaten Lampung Selatan, semakin menjadi salah satu destinasi wisata favorit di daerah ini. Dengan harga tiket masuk yang sangat terjangkau, yaitu Rp 20.000 per motor, sudah termasuk biaya parkir. Pantai Kedu menawarkan pengalaman liburan yang menyegarkan dan memanjakan mata. Keindahan alam yang masih asri, ditambah dengan fasilitas yang cukup lengkap, menjadikan pantai ini sebagai tempat ideal untuk bersantai sambil menikmati pesona alam yang menakjubkan.</p>
+                                <a href="detail-kedu-warna.html" class="font-semibold text-teal-600 hover:text-teal-800">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- Kartu Pantai Marina -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all-smooth">
+                            <img src="https://cdn.antaranews.com/cache/1200x800/2024/02/09/20240208_155540.jpg" alt="Pantai Marina" class="w-full h-56 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Pantai Marina</h4>
+                                <p class="text-gray-600 mb-4 text-sm">Pesona Pantai Marina Lampung terdapat pada hamparan karang yang berada di sepanjang pesisir pantai. Deburan ombak yang menghantam karang serta pasir putih pada pinggiran pantai menjadi daya tarik tersendiri di Pantai Marina Lampung ini. Begitu memasuki area pantai, pengunjung akan disuguhi dengan keindahan hamparan laut luas yang menghadap langsung ke Samudera Hindia. Hal inilah yang membuat deburan ombak di Pantai Marina Lampung terbilang cukup besar dan kencang.</p>
+                                <a href="detail-marina.html" class="font-semibold text-teal-600 hover:text-teal-800">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- Kartu Pantai Aurora -->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all-smooth">
+                            <img src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/43/2024/04/29/InCollage_20240429_202720964-987914054.jpg" alt="Pantai Aurora" class="w-full h-56 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold mb-2">Pantai Aurora</h4>
+                                <p class="text-gray-600 mb-4 text-sm">Pantai Aurora terletak di Sinar Laut, Kota Kalianda, Kabupaten Lampung Selatan, Provinsi Lampung. Pantai ini merupakan salah satu deretan pantai yang terletak di Kota Kalianda. Kawasan ini memiliki pemandangan pantai yang sangat indah dan memukau dengan menikmati pemandangan Gunung Rajabasa.</p>
+                                <a href="detail-aurora.html" class="font-semibold text-teal-600 hover:text-teal-800">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="destinasi-pesawaran" class="pt-8">
+                 <h2 class="text-3xl font-bold mb-8 border-b-4 border-teal-500 pb-2">Pesawaran</h2>
+                  <div class="text-center text-gray-500">
+                     <p>Konten untuk Pesawaran akan segera ditambahkan.</p>
+                 </div>
+            </section>
+
+            <section id="destinasi-lampung-barat" class="pt-8">
+                 <h2 class="text-3xl font-bold mb-8 border-b-4 border-teal-500 pb-2">Lampung Barat</h2>
+                  <div class="text-center text-gray-500">
+                     <p>Konten untuk Lampung Barat akan segera ditambahkan.</p>
+                 </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Jelajahi Lampung</h3>
+                    <p class="text-gray-400 text-sm">Situs resmi untuk mempromosikan keindahan dan pesona pariwisata Provinsi Lampung.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Navigasi</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="destinasi.html" class="text-gray-400 hover:text-white">Destinasi</a></li>
+                        <li><a href="akomodasi.html" class="text-gray-400 hover:text-white">Akomodasi</a></li>
+                        <li><a href="profil.html" class="text-gray-400 hover:text-white">Profil & Sejarah</a></li>
+                        <li><a href="peta.html" class="text-gray-400 hover:text-white">Peta</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Dukungan</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Hubungi Kami</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Ikuti Kami</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
+                &copy; 2025 Destinasi Wisata Lampung. Rahmad Dafa Samudra. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Inisialisasi Feather Icons
+        feather.replace();
+
+        // Logika untuk menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
